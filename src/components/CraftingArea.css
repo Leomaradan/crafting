@@ -40,6 +40,10 @@
     height: 48px;
 }
 
+.grid-tag {
+    background-color: #7a7162;
+}
+
 .grid-furnace {
     margin-left: 50px;
 }

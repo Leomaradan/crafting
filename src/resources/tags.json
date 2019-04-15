@@ -1,0 +1,659 @@
+{
+  "tags": [
+    {
+      "id": "acacia_logs",
+      "item": "minecraft:acacia_log",
+      "items": [
+        "minecraft:acacia_log",
+        "minecraft:acacia_wood",
+        "minecraft:stripped_acacia_log",
+        "minecraft:stripped_acacia_wood"
+      ]
+    },
+    {
+      "id": "anvil",
+      "item": "minecraft:anvil",
+      "items": [
+        "minecraft:anvil",
+        "minecraft:chipped_anvil",
+        "minecraft:damaged_anvil"
+      ]
+    },
+    {
+      "id": "banners",
+      "item": "minecraft:white_banner",
+      "items": [
+        "minecraft:white_banner",
+        "minecraft:orange_banner",
+        "minecraft:magenta_banner",
+        "minecraft:light_blue_banner",
+        "minecraft:yellow_banner",
+        "minecraft:lime_banner",
+        "minecraft:pink_banner",
+        "minecraft:gray_banner",
+        "minecraft:light_gray_banner",
+        "minecraft:cyan_banner",
+        "minecraft:purple_banner",
+        "minecraft:blue_banner",
+        "minecraft:brown_banner",
+        "minecraft:green_banner",
+        "minecraft:red_banner",
+        "minecraft:black_banner"
+      ]
+    },
+    {
+      "id": "beds",
+      "item": "minecraft:white_bed",
+      "items": [
+        "minecraft:red_bed",
+        "minecraft:black_bed",
+        "minecraft:blue_bed",
+        "minecraft:brown_bed",
+        "minecraft:cyan_bed",
+        "minecraft:gray_bed",
+        "minecraft:green_bed",
+        "minecraft:light_blue_bed",
+        "minecraft:light_gray_bed",
+        "minecraft:lime_bed",
+        "minecraft:magenta_bed",
+        "minecraft:orange_bed",
+        "minecraft:pink_bed",
+        "minecraft:purple_bed",
+        "minecraft:white_bed",
+        "minecraft:yellow_bed"
+      ]
+    },
+    {
+      "id": "birch_logs",
+      "item": "minecraft:birch_log",
+      "items": [
+        "minecraft:birch_log",
+        "minecraft:birch_wood",
+        "minecraft:stripped_birch_log",
+        "minecraft:stripped_birch_wood"
+      ]
+    },
+    {
+      "id": "buttons",
+      "item": "minecraft:oak_button",
+      "items": [
+        "minecraft:stone_button",
+        "minecraft:oak_button",
+        "minecraft:spruce_button",
+        "minecraft:birch_button",
+        "minecraft:jungle_button",
+        "minecraft:acacia_button",
+        "minecraft:dark_oak_button"
+      ]
+    },
+    {
+      "id": "carpets",
+      "item": "minecraft:white_carpet",
+      "items": [
+        "minecraft:white_carpet",
+        "minecraft:orange_carpet",
+        "minecraft:magenta_carpet",
+        "minecraft:light_blue_carpet",
+        "minecraft:yellow_carpet",
+        "minecraft:lime_carpet",
+        "minecraft:pink_carpet",
+        "minecraft:gray_carpet",
+        "minecraft:light_gray_carpet",
+        "minecraft:cyan_carpet",
+        "minecraft:purple_carpet",
+        "minecraft:blue_carpet",
+        "minecraft:brown_carpet",
+        "minecraft:green_carpet",
+        "minecraft:red_carpet",
+        "minecraft:black_carpet"
+      ]
+    },
+    {
+      "id": "corals",
+      "item": "minecraft:tube_coral_fan",
+      "items": [
+        "minecraft:tube_coral_fan",
+        "minecraft:brain_coral_fan",
+        "minecraft:bubble_coral_fan",
+        "minecraft:fire_coral_fan",
+        "minecraft:horn_coral_fan",
+        "minecraft:tube_coral",
+        "minecraft:brain_coral",
+        "minecraft:bubble_coral",
+        "minecraft:fire_coral",
+        "minecraft:horn_coral"
+      ]
+    },
+    {
+      "id": "coral_blocks",
+      "item": "minecraft:tube_coral_block",
+      "items": [
+        "minecraft:tube_coral_block",
+        "minecraft:brain_coral_block",
+        "minecraft:bubble_coral_block",
+        "minecraft:fire_coral_block",
+        "minecraft:horn_coral_block"
+      ]
+    },
+    {
+      "id": "coral_plants",
+      "item": "minecraft:tube_coral",
+      "items": [
+        "minecraft:tube_coral",
+        "minecraft:brain_coral",
+        "minecraft:bubble_coral",
+        "minecraft:fire_coral",
+        "minecraft:horn_coral"
+      ]
+    },
+    {
+      "id": "dark_oak_logs",
+      "item": "minecraft:dark_oak_log",
+      "items": [
+        "minecraft:dark_oak_log",
+        "minecraft:dark_oak_wood",
+        "minecraft:stripped_dark_oak_log",
+        "minecraft:stripped_dark_oak_wood"
+      ]
+    },
+    {
+      "id": "dirt_like",
+      "item": "minecraft:dirt",
+      "items": [
+        "minecraft:dirt",
+        "minecraft:grass_block",
+        "minecraft:podzol",
+        "minecraft:coarse_dirt",
+        "minecraft:mycelium"
+      ]
+    },
+    {
+      "id": "doors",
+      "item": "minecraft:oak_door",
+      "items": [
+        "minecraft:iron_door",
+        "minecraft:oak_door",
+        "minecraft:spruce_door",
+        "minecraft:birch_door",
+        "minecraft:jungle_door",
+        "minecraft:acacia_door",
+        "minecraft:dark_oak_door"
+      ]
+    },
+    {
+      "id": "fences",
+      "item": "minecraft:oak_fence",
+      "items": [
+        "minecraft:nether_brick_fence",
+        "minecraft:oak_fence",
+        "minecraft:acacia_fence",
+        "minecraft:dark_oak_fence",
+        "minecraft:spruce_fence",
+        "minecraft:birch_fence",
+        "minecraft:jungle_fence"
+      ]
+    },
+    {
+      "id": "ice",
+      "item": "minecraft:ice",
+      "items": [
+        "minecraft:ice",
+        "minecraft:packed_ice",
+        "minecraft:blue_ice",
+        "minecraft:frosted_ice"
+      ]
+    },
+    {
+      "id": "jungle_logs",
+      "item": "minecraft:jungle_log",
+      "items": [
+        "minecraft:jungle_log",
+        "minecraft:jungle_wood",
+        "minecraft:stripped_jungle_log",
+        "minecraft:stripped_jungle_wood"
+      ]
+    },
+    {
+      "id": "leaves",
+      "item": "minecraft:oak_leaves",
+      "items": [
+        "minecraft:jungle_leaves",
+        "minecraft:oak_leaves",
+        "minecraft:spruce_leaves",
+        "minecraft:dark_oak_leaves",
+        "minecraft:acacia_leaves",
+        "minecraft:birch_leaves"
+      ]
+    },
+    {
+      "id": "logs",
+      "item": "minecraft:jungle_log",
+      "items": [
+        "minecraft:jungle_log",
+        "minecraft:jungle_wood",
+        "minecraft:stripped_jungle_log",
+        "minecraft:stripped_jungle_wood",
+        "minecraft:spruce_log",
+        "minecraft:spruce_wood",
+        "minecraft:stripped_spruce_log",
+        "minecraft:stripped_spruce_wood",
+        "minecraft:birch_log",
+        "minecraft:birch_wood",
+        "minecraft:stripped_birch_log",
+        "minecraft:stripped_birch_wood"
+      ]
+    },
+    {
+      "id": "oak_logs",
+      "item": "minecraft:oak_log",
+      "items": [
+        "minecraft:oak_log",
+        "minecraft:oak_wood",
+        "minecraft:stripped_oak_log",
+        "minecraft:stripped_oak_wood"
+      ]
+    },
+    {
+      "id": "planks",
+      "item": "minecraft:oak_planks",
+      "items": [
+        "minecraft:oak_planks",
+        "minecraft:spruce_planks",
+        "minecraft:birch_planks",
+        "minecraft:jungle_planks",
+        "minecraft:acacia_planks",
+        "minecraft:dark_oak_planks"
+      ]
+    },
+    {
+      "id": "rails",
+      "item": "minecraft:rail",
+      "items": [
+        "minecraft:rail",
+        "minecraft:powered_rail",
+        "minecraft:detector_rail",
+        "minecraft:activator_rail"
+      ]
+    },
+    {
+      "id": "sand",
+      "item": "minecraft:sand",
+      "items": [
+        "minecraft:sand",
+        "minecraft:red_sand"
+      ]
+    },
+    {
+      "id": "saplings",
+      "item": "minecraft:oak_sapling",
+      "items": [
+        "minecraft:oak_sapling",
+        "minecraft:spruce_sapling",
+        "minecraft:birch_sapling",
+        "minecraft:jungle_sapling",
+        "minecraft:acacia_sapling",
+        "minecraft:dark_oak_sapling"
+      ]
+    },
+    {
+      "id": "signs",
+      "item": "minecraft:oak_sign",
+      "items": [
+        "minecraft:oak_sign",
+        "minecraft:spruce_sign",
+        "minecraft:birch_sign",
+        "minecraft:acacia_sign",
+        "minecraft:jungle_sign",
+        "minecraft:dark_oak_sign"
+      ]
+    },
+    {
+      "id": "slabs",
+      "item": "minecraft:oak_slab",
+      "items": [
+        "minecraft:stone_slab",
+        "minecraft:smooth_stone_slab",
+        "minecraft:stone_brick_slab",
+        "minecraft:sandstone_slab",
+        "minecraft:acacia_slab",
+        "minecraft:birch_slab",
+        "minecraft:dark_oak_slab",
+        "minecraft:jungle_slab",
+        "minecraft:oak_slab",
+        "minecraft:spruce_slab",
+        "minecraft:purpur_slab",
+        "minecraft:quartz_slab",
+        "minecraft:red_sandstone_slab",
+        "minecraft:brick_slab",
+        "minecraft:cobblestone_slab",
+        "minecraft:nether_brick_slab",
+        "minecraft:petrified_oak_slab",
+        "minecraft:prismarine_slab",
+        "minecraft:prismarine_bricks_slab",
+        "minecraft:dark_prismarine_slab",
+        "minecraft:polished_granite_slab",
+        "minecraft:smooth_red_sandstone_slab",
+        "minecraft:mossy_stone_brick_slab",
+        "minecraft:polished_diorite_slab",
+        "minecraft:mossy_cobblestone_slab",
+        "minecraft:end_stone_brick_slab",
+        "minecraft:smooth_sandstone_slab",
+        "minecraft:smooth_quartz_slab",
+        "minecraft:granite_slab",
+        "minecraft:andesite_slab",
+        "minecraft:red_nether_brick_slab",
+        "minecraft:polished_andesite_slab",
+        "minecraft:diorite_slab"
+      ]
+    },
+    {
+      "id": "small_flowers",
+      "item": "minecraft:white_tulip",
+      "items": [
+        "minecraft:dandelion",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        "minecraft:red_tulip",
+        "minecraft:orange_tulip",
+        "minecraft:white_tulip",
+        "minecraft:pink_tulip",
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:wither_rose"
+      ]
+    },
+    {
+      "id": "spruce_logs",
+      "item": "minecraft:spruce_log",
+      "items": [
+        "minecraft:spruce_log",
+        "minecraft:spruce_wood",
+        "minecraft:stripped_spruce_log",
+        "minecraft:stripped_spruce_wood"
+      ]
+    },
+    {
+      "id": "stairs",
+      "item": "minecraft:oak_stairs",
+      "items": [
+        "minecraft:oak_stairs",
+        "minecraft:cobblestone_stairs",
+        "minecraft:spruce_stairs",
+        "minecraft:sandstone_stairs",
+        "minecraft:acacia_stairs",
+        "minecraft:jungle_stairs",
+        "minecraft:birch_stairs",
+        "minecraft:dark_oak_stairs",
+        "minecraft:nether_brick_stairs",
+        "minecraft:stone_brick_stairs",
+        "minecraft:brick_stairs",
+        "minecraft:purpur_stairs",
+        "minecraft:quartz_stairs",
+        "minecraft:red_sandstone_stairs",
+        "minecraft:prismarine_bricks_stairs",
+        "minecraft:prismarine_stairs",
+        "minecraft:dark_prismarine_stairs",
+        "minecraft:polished_granite_stairs",
+        "minecraft:smooth_red_sandstone_stairs",
+        "minecraft:mossy_stone_brick_stairs",
+        "minecraft:polished_diorite_stairs",
+        "minecraft:mossy_cobblestone_stairs",
+        "minecraft:end_stone_brick_stairs",
+        "minecraft:stone_stairs",
+        "minecraft:smooth_sandstone_stairs",
+        "minecraft:smooth_quartz_stairs",
+        "minecraft:granite_stairs",
+        "minecraft:andesite_stairs",
+        "minecraft:red_nether_brick_stairs",
+        "minecraft:polished_andesite_stairs",
+        "minecraft:diorite_stairs"
+      ]
+    },
+    {
+      "id": "standing_signs",
+      "item": "minecraft:oak_sign",
+      "items": [
+        "minecraft:oak_sign",
+        "minecraft:spruce_sign",
+        "minecraft:birch_sign",
+        "minecraft:acacia_sign",
+        "minecraft:jungle_sign",
+        "minecraft:dark_oak_sign"
+      ]
+    },
+    {
+      "id": "stone_bricks",
+      "item": "minecraft:stone_bricks",
+      "items": [
+        "minecraft:stone_bricks",
+        "minecraft:mossy_stone_bricks",
+        "minecraft:cracked_stone_bricks",
+        "minecraft:chiseled_stone_bricks"
+      ]
+    },
+    {
+      "id": "trapdoors",
+      "item": "minecraft:oak_trapdoor",
+      "items": [
+        "minecraft:iron_trapdoor",
+        "minecraft:acacia_trapdoor",
+        "minecraft:birch_trapdoor",
+        "minecraft:dark_oak_trapdoor",
+        "minecraft:jungle_trapdoor",
+        "minecraft:oak_trapdoor",
+        "minecraft:spruce_trapdoor"
+      ]
+    },
+    {
+      "id": "walls",
+      "item": "minecraft:cobblestone_wall",
+      "items": [
+        "minecraft:cobblestone_wall",
+        "minecraft:mossy_cobblestone_wall",
+        "minecraft:brick_wall",
+        "minecraft:prismarine_wall",
+        "minecraft:red_sandstone_wall",
+        "minecraft:mossy_stone_brick_wall",
+        "minecraft:granite_wall",
+        "minecraft:stone_brick_wall",
+        "minecraft:nether_brick_wall",
+        "minecraft:andesite_wall",
+        "minecraft:red_nether_brick_wall",
+        "minecraft:sandstone_wall",
+        "minecraft:end_stone_brick_wall",
+        "minecraft:diorite_wall"
+      ]
+    },
+    {
+      "id": "wooden_buttons",
+      "item": "minecraft:oak_button",
+      "items": [
+        "minecraft:oak_button",
+        "minecraft:spruce_button",
+        "minecraft:birch_button",
+        "minecraft:jungle_button",
+        "minecraft:acacia_button",
+        "minecraft:dark_oak_button"
+      ]
+    },
+    {
+      "id": "wooden_doors",
+      "item": "minecraft:oak_door",
+      "items": [
+        "minecraft:oak_door",
+        "minecraft:spruce_door",
+        "minecraft:birch_door",
+        "minecraft:jungle_door",
+        "minecraft:acacia_door",
+        "minecraft:dark_oak_door"
+      ]
+    },
+    {
+      "id": "wooden_fences",
+      "item": "minecraft:oak_fence",
+      "items": [
+        "minecraft:oak_fence",
+        "minecraft:acacia_fence",
+        "minecraft:dark_oak_fence",
+        "minecraft:spruce_fence",
+        "minecraft:birch_fence",
+        "minecraft:jungle_fence"
+      ]
+    },
+    {
+      "id": "wooden_pressure_plates",
+      "item": "minecraft:oak_pressure_plate",
+      "items": [
+        "minecraft:oak_pressure_plate",
+        "minecraft:spruce_pressure_plate",
+        "minecraft:birch_pressure_plate",
+        "minecraft:jungle_pressure_plate",
+        "minecraft:acacia_pressure_plate",
+        "minecraft:dark_oak_pressure_plate"
+      ]
+    },
+    {
+      "id": "wooden_slabs",
+      "item": "minecraft:oak_slab",
+      "items": [
+        "minecraft:oak_slab",
+        "minecraft:spruce_slab",
+        "minecraft:birch_slab",
+        "minecraft:jungle_slab",
+        "minecraft:acacia_slab",
+        "minecraft:dark_oak_slab"
+      ]
+    },
+    {
+      "id": "wooden_stairs",
+      "item": "minecraft:oak_stairs",
+      "items": [
+        "minecraft:oak_stairs",
+        "minecraft:spruce_stairs",
+        "minecraft:birch_stairs",
+        "minecraft:jungle_stairs",
+        "minecraft:acacia_stairs",
+        "minecraft:dark_oak_stairs"
+      ]
+    },
+    {
+      "id": "wooden_trapdoors",
+      "item": "minecraft:oak_trapdoor",
+      "items": [
+        "minecraft:acacia_trapdoor",
+        "minecraft:birch_trapdoor",
+        "minecraft:dark_oak_trapdoor",
+        "minecraft:jungle_trapdoor",
+        "minecraft:oak_trapdoor",
+        "minecraft:spruce_trapdoor"
+      ]
+    },
+    {
+      "id": "wool",
+      "item": "minecraft:white_wool",
+      "items": [
+        "minecraft:white_wool",
+        "minecraft:orange_wool",
+        "minecraft:magenta_wool",
+        "minecraft:light_blue_wool",
+        "minecraft:yellow_wool",
+        "minecraft:lime_wool",
+        "minecraft:pink_wool",
+        "minecraft:gray_wool",
+        "minecraft:light_gray_wool",
+        "minecraft:cyan_wool",
+        "minecraft:purple_wool",
+        "minecraft:blue_wool",
+        "minecraft:brown_wool",
+        "minecraft:green_wool",
+        "minecraft:red_wool",
+        "minecraft:black_wool"
+      ]
+    },
+    {
+      "id": "arrows",
+      "item": "minecraft:arrow",
+      "items": [
+        "minecraft:arrow",
+        "minecraft:tipped_arrow",
+        "minecraft:spectral_arrow"
+      ]
+    },
+    {
+      "id": "boats",
+      "item": "minecraft:oak_boat",
+      "items": [
+        "minecraft:oak_boat",
+        "minecraft:spruce_boat",
+        "minecraft:birch_boat",
+        "minecraft:jungle_boat",
+        "minecraft:acacia_boat",
+        "minecraft:dark_oak_boat"
+      ]
+    },
+    {
+      "id": "coals",
+      "item": "minecraft:coal",
+      "items": [
+        "minecraft:coal",
+        "minecraft:charcoal"
+      ]
+    },
+    {
+      "id": "fishes",
+      "item": "minecraft:cod",
+      "items": [
+        "minecraft:cod",
+        "minecraft:cooked_cod",
+        "minecraft:salmon",
+        "minecraft:cooked_salmon",
+        "minecraft:pufferfish",
+        "minecraft:tropical_fish"
+      ]
+    },
+    {
+      "id": "music_discs",
+      "item": "minecraft:music_disc_13",
+      "items": [
+        "minecraft:music_disc_13",
+        "minecraft:music_disc_cat",
+        "minecraft:music_disc_blocks",
+        "minecraft:music_disc_chirp",
+        "minecraft:music_disc_far",
+        "minecraft:music_disc_mall",
+        "minecraft:music_disc_mellohi",
+        "minecraft:music_disc_stal",
+        "minecraft:music_disc_strad",
+        "minecraft:music_disc_ward",
+        "minecraft:music_disc_11",
+        "minecraft:music_disc_wait"
+      ]
+    },
+    {
+      "id": "shulkers",
+      "item": "minecraft:white_shulker_box",
+      "items": [
+        "minecraft:shulker_box",
+        "minecraft:white_shulker_box",
+        "minecraft:orange_shulker_box",
+        "minecraft:magenta_shulker_box",
+        "minecraft:light_blue_shulker_box",
+        "minecraft:yellow_shulker_box",
+        "minecraft:lime_shulker_box",
+        "minecraft:pink_shulker_box",
+        "minecraft:gray_shulker_box",
+        "minecraft:light_gray_shulker_box",
+        "minecraft:cyan_shulker_box",
+        "minecraft:purple_shulker_box",
+        "minecraft:blue_shulker_box",
+        "minecraft:brown_shulker_box",
+        "minecraft:green_shulker_box",
+        "minecraft:red_shulker_box",
+        "minecraft:black_shulker_box"
+      ]
+    }
+  ]
+}

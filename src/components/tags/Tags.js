@@ -100,6 +100,13 @@ class Tags extends Component {
     const { currentTag } = this.state
     const { tags } = this.props
 
+    const customTags = {}
+    Object.keys(tags).forEach((id) => {
+      if (!tags[id].readonly) {
+        customTags[id] = tags[id]
+      }
+    })
+
     const tag = tags[currentTag]
 
     const tagItemTooltip = (
@@ -203,7 +210,7 @@ class Tags extends Component {
       )
     }
 
-    if (!Object.keys(tags).length) return null
+    if (!Object.keys(customTags).length) return null
     return (
       <Panel defaultExpanded>
         <Panel.Heading>
@@ -217,7 +224,7 @@ class Tags extends Component {
             animation={false}
             onSelect={(key) => this.setState({ currentTag: key })}
             id='selected-tab'>
-            {Object.keys(tags).map((id) => <Tab key={id} eventKey={id} title={tags[id].name} />)}
+            {Object.keys(customTags).map((id) => <Tab key={id} eventKey={id} title={tags[id].name} />)}
           </Tabs>
           {tagOptions}
         </Panel.Body>

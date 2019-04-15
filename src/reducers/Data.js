@@ -17,6 +17,7 @@ import {
   REMOVE_TAG,
   UPDATE_TAG,
   ADD_TAG_ITEM,
+  ADD_DEFAULT_TAG,
   REMOVE_TAG_ITEM,
   UPDATE_ALL_TIMERS
 } from '../actions'
@@ -90,6 +91,7 @@ export default function Data (state = {
           name: `tag${draft.tagIndex}`,
           namespace: 'adventure',
           asTag: true,
+          readonly: false,
           items: [
             action.payload.ingredient
           ]
@@ -122,6 +124,36 @@ export default function Data (state = {
           index: 0 // reset
         }
         break
+
+      case ADD_DEFAULT_TAG:
+        const { items: addItems, id: addIds, name } = action.payload
+
+        // draft.tagIndex += 1
+        draft.tags[addIds] = {
+          name,
+          namespace: 'minecraft',
+          asTag: true,
+          readonly: true,
+          items: []
+        }
+
+        // check that the item isn't already there
+        addItems.forEach(item => {
+          const itemsCheck = draft.tags[addIds].items
+            .find((currentItem) => currentItem.id === item.id)
+
+          if (!itemsCheck) {
+            draft.tags[addIds].items.push(item)
+          }
+        })
+
+        // update the tag update timer
+        /* draft.tagUpdateTimers[addIds] = {
+          max: draft.tags[addIds].items.length - 1, // maximum index, set to the number of items
+          index: 0 // reset
+        } */
+        break
+
       case REMOVE_TAG_ITEM:
         const { id: removeId, index: removeIndex } = action.payload
         // a certain magical tag index...
