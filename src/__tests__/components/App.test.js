@@ -1,10 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import App from '../../App'
+import { DragDropContextApp } from '../../App'
 
-describe('<App />', () => {
+describe('<DragDropContextApp />', () => {
+
   it('renders without exploding', () => {
-    expect(shallow(<App />)).toHaveLength(1)
+    expect(shallow(<DragDropContextApp />)).toHaveLength(1)
   })
 })

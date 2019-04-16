@@ -80,7 +80,6 @@ export class App extends Component {
           if (filter.length === 1) {
             return filter[0]
           }
-          console.error({ filter, item })
           return null
         })
 
@@ -113,6 +112,6 @@ export class App extends Component {
   }
 }
 
-const DragDropContextApp = DragDropContext(MultiBackend(HTML5toTouch))(App)
+export const DragDropContextApp = DragDropContext(MultiBackend(HTML5toTouch))(App)
 
 export default connect()(DragDropContextApp)
