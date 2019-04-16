@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore } from 'redux'
 import ReduxThunk from 'redux-thunk'
 import reducer from '../reducers'
-import { UPDATE_ALL_TIMERS } from '../actions'
+import { UPDATE_ALL_TIMERS, ADD_DEFAULT_TAG } from '../actions'
 
 import tagUpdateMiddleware from './tagUpdateMiddleware'
 
@@ -13,7 +13,7 @@ export default function configureStore () {
     const { createLogger } = require('redux-logger')
     const logger = createLogger({
       // don't log this please
-      predicate: (getState, action) => action.type !== UPDATE_ALL_TIMERS
+      predicate: (getState, action) => action.type !== UPDATE_ALL_TIMERS && action.type !== ADD_DEFAULT_TAG
     })
     middleware.push(logger)
   }

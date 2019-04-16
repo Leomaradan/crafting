@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setFirstEmptyCraftingSlot } from '../actions'
+
 import { Panel } from 'react-bootstrap'
 import DebouncedInput from './DebouncedInput'
 
 import Ingredient from './ingredient/Ingredient'
 import IngredientClass from '../classes/Ingredient'
+import Tag from '../classes/Tag'
 
 // get the items from the JSON file
 import getTextures from 'minecraft-textures'
 
 import './Ingredients.css'
 
-const IngredientItems = getTextures('1.13').items
+const IngredientItems = getTextures('1.14').items
 
 class Ingredients extends Component {
   constructor (props) {
@@ -25,10 +27,16 @@ class Ingredients extends Component {
 
   render () {
     const { search } = this.state
-    const { dispatch } = this.props
+    const { dispatch, tags } = this.props
 
     // convert the items to the class
     const ingredients = IngredientItems.map((ingredient) => new IngredientClass(ingredient.id, ingredient.readable, ingredient.texture))
+
+    Object.keys(tags).forEach((id) => {
+      if (tags[id].readonly) {
+        ingredients.push(new Tag(id))
+      }
+    })
 
     return (
       <Panel>
@@ -50,7 +58,7 @@ class Ingredients extends Component {
                   key={index}
                   onDoubleClick={() => dispatch(setFirstEmptyCraftingSlot(ingredient))}
                 >
-                  <Ingredient ingredient={ingredient} size='normal' />
+                  <Ingredient ingredient={ingredient} size='normal' minecraftTag={ingredient.tag !== undefined} />
                 </div>
               ) : null
             })}
@@ -61,4 +69,8 @@ class Ingredients extends Component {
   }
 }
 
-export default connect()(Ingredients)
+export default connect((store) => {
+  return {
+    tags: store.Data.tags
+  }
+})(Ingredients)

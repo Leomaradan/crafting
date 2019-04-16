@@ -12,7 +12,7 @@ import Tooltip from '../Tooltip'
 
 const ingredientSource = {
   beginDrag (props, monitor, component) {
-    const { ingredient, slot, size } = props
+    const { ingredient, slot, size, minecraftTag } = props
     // hide while dragging
     component.setState({
       mouse: { ...component.state.mouse, display: 'none' }
@@ -21,7 +21,8 @@ const ingredientSource = {
     return {
       ingredient,
       slot,
-      size
+      size,
+      minecraftTag
     }
   },
 
@@ -120,7 +121,7 @@ class Ingredient extends Component {
   }
 
   render () {
-    const { connectDragSource, size, tags, draggable = true } = this.props
+    const { connectDragSource, size, minecraftTag, tags, draggable = true } = this.props
     const ingredient = this.props.ingredient
 
     let readable = ingredient.readable
@@ -145,7 +146,8 @@ class Ingredient extends Component {
         className={classNames({
           'grid-large': size === 'large',
           'grid': size === 'normal',
-          'grid-furnace': size === 'furnace'
+          'grid-furnace': size === 'furnace',
+          'grid-tag': minecraftTag
         })}
         onMouseMove={this.onMouseMove}
         onMouseOut={this.onMouseOut}
