@@ -81,12 +81,13 @@ class CraftingGenerator {
 
   /**
    * Returns the default for smelting
+   * @param type
    * @returns {object}
    */
-  getSmeltingDefault () {
+  getSmeltingDefault (type = 'smelting') {
     const { extras } = this
     let smelting = {
-      type: 'smelting',
+      type,
       ingredient: {},
       result: {},
       experience: 0,
@@ -100,6 +101,27 @@ class CraftingGenerator {
       }
     }
     return smelting
+  }
+
+  /**
+   * Returns the default for stonecutting
+   * @returns {object}
+   */
+  getStonecuttingDefault () {
+    const { extras } = this
+    let stonecutting = {
+      type: 'stonecutting',
+      ingredient: {},
+      result: {}
+    }
+    // go through the extras and add to the object
+    for (let extraKey of Object.keys(extras)) {
+      let extra = extras[extraKey]
+      if (extra) {
+        stonecutting[extraKey] = extras[extraKey]
+      }
+    }
+    return stonecutting
   }
 
   /**
@@ -358,12 +380,25 @@ class CraftingGenerator {
    * Returns a smelting crafting of the input provided
    * @param time
    * @param experience
+   * @param type
    * @returns {object}
    */
-  smelting (time = 0, experience = 0) {
+  smelting (time = 0, experience = 0, type) {
     const { input, output } = this
 
-    let shape = { ...this.getSmeltingDefault() }
+    let shape = { ...this.getSmeltingDefault(type) }
+
+    switch (type) {
+      case 'blasting':
+      case 'smoking':
+        time /= 2
+        break
+      case 'campfire_cooking':
+        time *= 3
+        break
+      default:
+        break
+    }
 
     // add the ingredient
     let ingredient = input
@@ -385,6 +420,36 @@ class CraftingGenerator {
 
     shape.cookingtime = time || 0
     shape.experience = experience || 0
+
+    return shape
+  }
+
+  /**
+   * Returns a stonecutting crafting of the input provided
+   * @returns {object}
+   */
+  stonecutting () {
+    const { input, output } = this
+
+    let shape = { ...this.getStonecuttingDefault() }
+
+    // add the ingredient
+    let ingredient = input
+
+    // only if populated
+    if (ingredient.isPopulated()) {
+      shape.ingredient = this.getItemType(ingredient)
+
+      // handle tags...
+      if (shape.ingredient.tag) {
+        const tag = this.tags[shape.ingredient.tag.tag]
+        shape.ingredient = this.handleTags(tag)
+      }
+    }
+
+    if (output.isPopulated()) {
+      shape.result = output.id
+    }
 
     return shape
   }

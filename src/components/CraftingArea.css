@@ -10,7 +10,7 @@
     line-height: 42px;
 }
 
-.grid, .grid-large, .grid-furnace {
+.grid, .grid-large, .grid-furnace, .grid-stonecutter {
     float: left;
     display: block;
     text-align: center !important;
@@ -21,7 +21,7 @@
     vertical-align: middle;
 }
 
-.grid-large img {
+.grid-large img, .grid-stonecutter img {
     z-index: -1;
     margin-top: 8px;
 }
@@ -31,11 +31,11 @@
     height: 36px;
 }
 
-.grid:hover, .grid-large:hover, .grid-furnace:hover {
+.grid:hover, .grid-large:hover, .grid-furnace:hover, .grid-stonecutter:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.grid-large {
+.grid-large, .grid-stonecutter {
     width: 48px;
     height: 48px;
 }
@@ -48,7 +48,11 @@
     margin-left: 50px;
 }
 
-.grid img, .grid-large img, .grid-furnace img {
+.grid-stonecutter {
+    margin-top: 20px;
+}
+
+.grid img, .grid-large img, .grid-furnace img, .grid-stonecutter img {
     cursor: move;
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
-import { setCraftingSlot, setFurnaceSlot, setOutputSlot } from '../../actions'
+import { setCraftingSlot, setFurnaceSlot, setStonecutterSlot, setOutputSlot } from '../../actions'
 import { DropTarget } from 'react-dnd'
 import { ContextMenuTrigger } from 'react-contextmenu'
 
@@ -12,7 +12,7 @@ import CraftingContextMenu from '../crafting/CraftingContextMenu'
 
 const craftingTarget = {
   drop (props, monitor, component) {
-    const { dispatch, size, index, crafting, furnace, disabled } = props
+    const { dispatch, size, index, crafting, furnace, stonecutter, disabled } = props
     if (disabled) {
       return
     }
@@ -43,12 +43,22 @@ const craftingTarget = {
           dispatch(setOutputSlot(item.ingredient))
         }
       } else {
-        if (type === 'crafting') {
-          dispatch(setCraftingSlot(index, item.ingredient))
-          replacedItem = crafting[index]
-        } else if (type === 'furnace') {
-          dispatch(setFurnaceSlot(item.ingredient))
-          replacedItem = furnace.input
+        switch (type) {
+          case 'crafting':
+            dispatch(setCraftingSlot(index, item.ingredient))
+            replacedItem = crafting[index]
+            break
+          case 'furnace':
+            dispatch(setFurnaceSlot(item.ingredient))
+            replacedItem = furnace.input
+            break
+          case 'stonecutter':
+            dispatch(setStonecutterSlot(item.ingredient))
+            replacedItem = stonecutter.input
+            break
+          default:
+            // Nothing to do
+            break
         }
       }
     }
@@ -75,6 +85,7 @@ class CraftingGrid extends Component {
       return (
         <span className={classNames({
           'grid-furnace': type === 'furnace',
+          'grid-stonecutter': type === 'stonecutter',
           'grid': type === 'crafting'
         })} />
       )
@@ -110,7 +121,8 @@ export default compose(
     return {
       tab: store.Options.tab,
       crafting: store.Data.crafting,
-      furnace: store.Data.furnace
+      furnace: store.Data.furnace,
+      stonecutter: store.Data.stonecutter
     }
   }),
   DropTarget('ingredient', craftingTarget, (connect) => ({

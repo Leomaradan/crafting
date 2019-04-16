@@ -52,7 +52,7 @@ class Output extends Component {
   }
 
   generateCrafting () {
-    const { input, output, group, furnace, emptySpace, shape, tab, tags } = this.props
+    const { input, output, group, furnace, stonecutter, emptySpace, shape, tab, tags, furnaceVariant } = this.props
     let json, generator
     if (tab === 'crafting') {
       generator = new CraftingGenerator(input, output, tags, { group })
@@ -63,7 +63,17 @@ class Output extends Component {
       }
     } else if (tab === 'furnace') {
       generator = new CraftingGenerator(furnace.input, output, tags, { group })
-      json = generator.smelting(furnace.cookingTime, furnace.experience)
+      if (furnaceVariant.length > 1) {
+        json = []
+        furnaceVariant.forEach(variant => {
+          json.push(generator.smelting(furnace.cookingTime, furnace.experience, variant))
+        })
+      } else {
+        json = generator.smelting(furnace.cookingTime, furnace.experience, furnaceVariant[0])
+      }
+    } else if (tab === 'stonecutter') {
+      generator = new CraftingGenerator(stonecutter.input, output, tags, { group })
+      json = generator.stonecutting()
     }
 
     if (json.result && json.result.item) {
@@ -101,8 +111,16 @@ class Output extends Component {
         description: 'Generated with TheDestruc7i0n\'s crafting generator: https://crafting.thedestruc7i0n.ca'
       }
     }))
-    // add the crafting recipe
-    zip.file(`data/crafting/recipes/${craftingName}`, JSON.stringify(craftingRecipe, null, 4))
+    if (craftingRecipe.length !== undefined) {
+      craftingRecipe.forEach(recipe => {
+        let recipeName = recipe.type !== 'smelting' ? craftingName.substr(0, craftingName.length - 5) + '_from_' + recipe.type + '.json' : craftingName
+        zip.file(`data/crafting/recipes/${recipeName}`, JSON.stringify(recipe, null, 4))
+      })
+    } else {
+      // add the crafting recipe
+      zip.file(`data/crafting/recipes/${craftingName}`, JSON.stringify(craftingRecipe, null, 4))
+    }
+
     // add all the tags
     tags.forEach(({ namespace, name, data }) => {
       zip.file(`data/${namespace}/tags/items/${name}.json`, JSON.stringify(data, null, 4))
@@ -116,8 +134,18 @@ class Output extends Component {
     const fileSaveName = this.generateCraftingName()
     const json = this.generateCrafting()
 
-    let toCopy = JSON.stringify(json, null, 4)
-    let blob = new Blob([toCopy], { type: 'text/plain;charset=utf-8' })
+    let toCopy
+    let blob = null
+
+    if (json.length === undefined) {
+      toCopy = [JSON.stringify(json, null, 4)]
+      blob = new Blob([toCopy], { type: 'text/plain;charset=utf-8' })
+    } else {
+      toCopy = []
+      json.forEach(recipe => {
+        toCopy.push(JSON.stringify(recipe, null, 4))
+      })
+    }
 
     return (
       <Panel>
@@ -127,16 +155,16 @@ class Output extends Component {
           </Panel.Title>
         </Panel.Heading>
         <Panel.Body>
-          <SyntaxHighlighter
+          {toCopy.map((copy, index) => <SyntaxHighlighter key={index}
             style={defaultStyle}
-          >{toCopy}</SyntaxHighlighter>
-
-          <Button
+          >{copy}</SyntaxHighlighter>
+          )}
+          {blob != null ? <Button
             onClick={() => saveAs(blob, fileSaveName)}
             className='download-button'
             bsStyle='primary'
             block
-          >Download <code>{fileSaveName}</code></Button>
+          >Download <code>{fileSaveName}</code></Button> : null}
           <Button
             onClick={() => this.generateDatapack()}
             className='download-button'
@@ -155,11 +183,13 @@ export default connect((store) => {
     output: store.Data.output,
     group: store.Data.group,
     furnace: store.Data.furnace,
+    stonecutter: store.Data.stonecutter,
     tags: store.Data.tags,
 
     tab: store.Options.tab,
     shape: store.Options.shape,
     emptySpace: store.Options.emptySpace,
-    outputRecipe: store.Options.outputRecipe
+    outputRecipe: store.Options.outputRecipe,
+    furnaceVariant: store.Options.furnaceVariant
   }
 })(Output)

@@ -55,6 +55,27 @@ export const setFurnaceData = (key, value) => ({
   }
 })
 
+export const SET_STONECUTTER_SLOT = 'SET_STONECUTTER_SLOT'
+export const setStonecutterSlot = (ingredient) => (dispatch, getState) => {
+  const state = getState()
+  const currentItem = state.Data.stonecutter.input
+  // reset before populating again
+  if (currentItem.isPopulated()) {
+    dispatch(resetStonecutterSlot())
+  }
+  dispatch({
+    type: SET_STONECUTTER_SLOT,
+    payload: {
+      ingredient
+    }
+  })
+}
+
+export const RESET_STONECUTTER_SLOT = 'RESET_STONECUTTER_SLOT'
+export const resetStonecutterSlot = () => ({
+  type: RESET_FURNACE_SLOT
+})
+
 export const SET_FIRST_EMPTY_CRAFTING_SLOT = 'SET_FIRST_EMPTY_CRAFTING_SLOT'
 export const setFirstEmptyCraftingSlot = (ingredient) => ({
   type: SET_FIRST_EMPTY_CRAFTING_SLOT,
@@ -95,6 +116,12 @@ export const SET_SHAPE = 'SET_SHAPE'
 export const setShape = (shape) => ({
   type: SET_SHAPE,
   payload: shape
+})
+
+export const SET_FURNACE_VARIANT = 'SET_FURNACE_VARIANT'
+export const setFurnaceVariant = (variants) => ({
+  type: SET_FURNACE_VARIANT,
+  payload: variants
 })
 
 export const SET_EMPTY_SPACE = 'SET_EMPTY_SPACE'
@@ -182,3 +209,17 @@ export const UPDATE_ALL_TIMERS = 'UPDATE_ALL_TIMERS'
 export const updateTimers = () => ({
   type: UPDATE_ALL_TIMERS
 })
+
+export const ADD_DEFAULT_TAG = 'ADD_DEFAULT_TAG'
+export const addDefaultTag = (items, name) => (dispatch) => {
+  const id = uuid() // internal identifier for the tag
+
+  dispatch({
+    type: ADD_DEFAULT_TAG,
+    payload: {
+      id,
+      items,
+      name
+    }
+  })
+}

@@ -14,13 +14,29 @@ class CraftingArea extends Component {
 
     this.keyMapping = {
       1: 'crafting',
-      2: 'furnace'
+      2: 'furnace',
+      3: 'stonecutter'
     }
   }
 
   render () {
-    const { dispatch, crafting, furnace, output, tab } = this.props
+    const { dispatch, crafting, furnace, stonecutter, output, tab } = this.props
     const selectedTab = parseInt(invert(this.keyMapping)[tab], 10) // grab the selected tab index
+
+    const craftingGrid = crafting.map((key, index) => {
+      return (
+        <CraftingGrid key={index} index={index} ingredient={key} size='normal' type='crafting' />
+      )
+    })
+
+    const furnaceGrid = <Fragment>
+      <CraftingGrid index={0} ingredient={furnace.input} size='furnace' type='furnace' />
+      <div className='flame' />
+      <CraftingGrid index={0} ingredient={null} size='furnace' type='furnace' disabled />
+    </Fragment>
+
+    const stonecutterGrid = <CraftingGrid index={0} ingredient={stonecutter.input} size='stonecutter' type='stonecutter' />
+
     return (
       <Panel>
         <Panel.Heading>
@@ -36,25 +52,16 @@ class CraftingArea extends Component {
             id='selected-tab'>
             <Tab eventKey={1} title='Crafting' />
             <Tab eventKey={2} title='Furnace' />
+            <Tab eventKey={3} title='Stonecutter' />
           </Tabs>
           <div className='crafting-holder'>
             <div className='crafting clearfix'>
               <div className='recipe'>
                 <h6>{upperFirst(tab)}</h6>
                 <div id='crafting-table'>
-                  {tab === 'crafting'
-                    ? crafting.map((key, index) => {
-                      return (
-                        <CraftingGrid key={index} index={index} ingredient={key} size='normal' type='crafting' />
-                      )
-                    })
-                    : (
-                      <Fragment>
-                        <CraftingGrid index={0} ingredient={furnace.input} size='furnace' type='furnace' />
-                        <div className='flame' />
-                        <CraftingGrid index={0} ingredient={null} size='furnace' type='furnace' disabled />
-                      </Fragment>
-                    )}
+                  { tab === 'crafting' ? craftingGrid : null }
+                  { tab === 'furnace' ? furnaceGrid : null }
+                  { tab === 'stonecutter' ? stonecutterGrid : null }
                 </div>
               </div>
               <div className='arrow' />
@@ -74,6 +81,7 @@ export default connect((store) => {
     tab: store.Options.tab,
     crafting: store.Data.crafting,
     furnace: store.Data.furnace,
+    stonecutter: store.Data.stonecutter,
     output: store.Data.output
   }
 })(CraftingArea)

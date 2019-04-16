@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
-import { resetCraftingSlot, resetFurnaceSlot, resetOutputSlot } from '../../actions'
+import { resetCraftingSlot, resetFurnaceSlot, resetOutputSlot, resetStonecutterSlot } from '../../actions'
 
 import classNames from 'classnames'
 
@@ -40,6 +40,8 @@ const ingredientSource = {
           dispatch(resetCraftingSlot(slot))
         } else if (type === 'furnace') {
           dispatch(resetFurnaceSlot())
+        } else if (type === 'stonecutter') {
+          dispatch(resetStonecutterSlot())
         }
       }
     }
@@ -147,6 +149,7 @@ class Ingredient extends Component {
           'grid-large': size === 'large',
           'grid': size === 'normal',
           'grid-furnace': size === 'furnace',
+          'grid-stonecutter': size === 'stonecutter',
           'grid-tag': minecraftTag
         })}
         onMouseMove={this.onMouseMove}

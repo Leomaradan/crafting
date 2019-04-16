@@ -13,6 +13,8 @@ import {
   SET_FURNACE_SLOT,
   RESET_FURNACE_SLOT,
   SET_FURNACE_DATA,
+  RESET_STONECUTTER_SLOT,
+  SET_STONECUTTER_SLOT,
   CREATE_TAG,
   REMOVE_TAG,
   UPDATE_TAG,
@@ -28,6 +30,9 @@ export default function Data (state = {
     input: new Ingredient(),
     cookingTime: 200,
     experience: 0.1
+  },
+  stonecutter: {
+    input: new Ingredient()
   },
   output: new Ingredient(),
   group: '',
@@ -78,6 +83,13 @@ export default function Data (state = {
         break
       case RESET_FURNACE_SLOT:
         draft.furnace.input = new Ingredient()
+        break
+      case SET_STONECUTTER_SLOT:
+        // set stonecutter slot to new instance of ingredient
+        draft.stonecutter.input = action.payload.ingredient
+        break
+      case RESET_STONECUTTER_SLOT:
+        draft.stonecutter.input = new Ingredient()
         break
       case SET_GROUP:
         draft.group = action.payload
@@ -147,11 +159,6 @@ export default function Data (state = {
           }
         })
 
-        // update the tag update timer
-        /* draft.tagUpdateTimers[addIds] = {
-          max: draft.tags[addIds].items.length - 1, // maximum index, set to the number of items
-          index: 0 // reset
-        } */
         break
 
       case REMOVE_TAG_ITEM:
